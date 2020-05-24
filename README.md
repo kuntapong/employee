@@ -13,7 +13,6 @@ The application uses H2 in memory database
 ./mvnw spring-boot:run
 ```
 
-* Run Application
 ## Token Authentication
 Make a post request to
 ```
