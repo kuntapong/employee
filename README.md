@@ -1,4 +1,4 @@
-# Spring-boot employee
+# Spring-boot Employee App
 
 ## Database
 The application uses H2 in memory database
