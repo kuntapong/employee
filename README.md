@@ -12,6 +12,8 @@ The application uses H2 in memory database
 ```
 ./mvnw spring-boot:run
 ```
+
+* Run Application
 ## Token Authentication
 Make a post request to
 ```
@@ -29,6 +31,13 @@ password: "password1"
 to get an access token.
 
 And then pass the token to header "app-auth" on employees enpoints
+
+## Unit tests and Integreation test
+* Using Maven
+```
+./mvnw test
+```
+* And You can run the unit tests and integration test using your IDE.
 
 ## Swagger UI
 http://localhost:8080/swagger-ui.html
