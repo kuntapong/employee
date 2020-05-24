@@ -16,6 +16,12 @@ The application uses H2 in memory database
 Make a post request to
 ```
 /api/v1/auth/login
+
+Request Body
+{
+  "username": "admin1",
+  "password": "password1"
+}
 ```
 Login with 
 username: "admin1"
