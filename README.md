@@ -29,7 +29,7 @@ username: "admin1"
 password: "password1"
 to get an access token.
 
-And then pass the token to header "app-auth" on employees enpoints
+And then pass the token to header "app-auth" on employees endpoints
 
 ## Unit tests and Integreation test
 * Using Maven
