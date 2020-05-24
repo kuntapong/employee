@@ -4,7 +4,7 @@ CREATE TABLE user (
   id INT AUTO_INCREMENT  PRIMARY KEY,
   username VARCHAR(50) NOT NULL,
   password VARCHAR(50) NOT NULL,
-  token VARCHAR(50) NULL,
+  token VARCHAR(100) NULL,
   token_expire TIMESTAMP NULL
 );
 

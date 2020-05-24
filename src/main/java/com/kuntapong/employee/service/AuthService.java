@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
 import java.time.LocalDateTime;
+import java.util.Base64;
 import java.util.Optional;
 
 @Service
@@ -16,6 +17,7 @@ public class AuthService {
     public static final int TOKEN_EXPIRE_HOURS = 24;
 
     private SecureRandom random = new SecureRandom();
+    private Base64.Encoder base64Encoder = Base64.getUrlEncoder();
 
     @Autowired
     private UserRepository userRepository;
@@ -39,7 +41,8 @@ public class AuthService {
     }
 
     private String generateToken( String username ) {
-        long longToken = Math.abs( random.nextLong() );
-        return Long.toString( longToken, 16 );
+        byte[] randomBytes = new byte[24];
+        random.nextBytes(randomBytes);
+        return base64Encoder.encodeToString(randomBytes);
     }
 }
