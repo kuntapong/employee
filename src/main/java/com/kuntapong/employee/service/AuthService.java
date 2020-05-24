@@ -21,9 +21,12 @@ public class AuthService {
     private UserRepository userRepository;
 
     public String login(String username, String password) {
+        //Do login
+        //Find user by username and password
         Optional<User> optionalUser = userRepository.findByUsernameAndPassword(username, password);
         if(optionalUser.isPresent()) {
             User user = optionalUser.get();
+            //Generate token
             String token = generateToken(username);
             user.setToken(token);
             user.setTokenExpire(LocalDateTime.now().plusHours(TOKEN_EXPIRE_HOURS));

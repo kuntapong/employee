@@ -21,30 +21,35 @@ public class EmployeeController {
 
     @GetMapping("")
     public List<Employee> getAllEmployees() {
+        //Get all employees
         log.info("Get all employees.");
         return employeeService.getAllEmployees();
     }
 
     @GetMapping("/{id}")
     public Employee getEmployeeByID(@PathVariable Long id) {
+        //Get employee by ID
         log.info("Get employee by id({}).", id);
         return employeeService.getEmployeeByID(id);
     }
 
     @PostMapping("")
     public Employee addEmployee(@RequestBody EmployeeRequest req) {
+        //Add new employee
         log.info("Add employee firstName({}), lastName({}).", req.getFirstName(), req.getLastName());
         return employeeService.addEmployee(req.getFirstName(), req.getLastName());
     }
 
     @PutMapping("/{id}")
     public Employee editEmployee(@PathVariable Long id, @RequestBody EmployeeRequest req) {
+        //Edit employee by id
         log.info("Edit employee ID({}) firstName({}), lastName({}).", id, req.getFirstName(), req.getLastName());
         return employeeService.editEmployee(id, req.getFirstName(), req.getLastName());
     }
 
     @DeleteMapping("/{id}")
     public void deleteEmployee(@PathVariable Long id) {
+        //Delete employee
         log.info("Delete employee ID({}).", id);
         employeeService.deleteEmployeeByID(id);
     }

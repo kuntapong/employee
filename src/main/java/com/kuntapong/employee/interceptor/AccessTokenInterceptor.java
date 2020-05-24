@@ -53,6 +53,7 @@ public class AccessTokenInterceptor implements HandlerInterceptor {
     }
 
     public void doLogout(User user) {
+        //Do logout by set token fields to null.
         user.setToken(null);
         user.setTokenExpire(null);
         userRepository.save(user);
